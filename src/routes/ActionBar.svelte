@@ -1,20 +1,24 @@
 <script>
-    let current = "foo";
+    let current = "Follow-Up 👋";
 </script>
 
 <button
-    class={current === "foo" ? "selected" : ""}
-    on:click={() => (current = "foo")}>foo</button
+    class={current === "Follow-up 👋" ? "selected" : ""}
+    on:click={() => (current = "Follow-up 👋")}>Follow-up 👋</button
 >
 
 <button
-    class={current === "bar" ? "selected" : ""}
-    on:click={() => (current = "bar")}>bar</button
+    class={current === "Cold Outreach 🥶" ? "selected" : ""}
+    on:click={() => (current = "Cold Outreach 🥶")}>Cold Outreach 🥶</button
 >
 
 <button
-    class={current === "baz" ? "selected" : ""}
-    on:click={() => (current = "baz")}>baz</button
+    class={current === "Warm Referral 🤝" ? "selected" : ""}
+    on:click={() => (current = "Warm Referral 🤝")}>Warm Referral 🤝</button
+>
+<button
+    class={current === "Custom ⚙️" ? "selected" : ""}
+    on:click={() => (current = "Custom ⚙️")}>Custom ⚙️</button
 >
 
 <style>
@@ -23,7 +27,7 @@
     }
 
     .selected {
-        background-color: #ff3e00;
+        background-color: #225b50;
         color: white;
     }
 </style>
