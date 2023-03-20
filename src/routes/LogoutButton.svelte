@@ -1,7 +1,6 @@
 <script>
-    import { signOut, getAuth } from "firebase/auth";
-
-    const auth = getAuth();
+    import { auth } from "./app.js";
+    import { signOut } from "firebase/auth";
 
     const logUserOut = () => {
         signOut(auth)
