@@ -4,21 +4,24 @@
 
     const db = getFirestore(app);
 
+    let settingsString = "";
+
     console.log("this is auth:" + auth.currentUser);
 
     console.log("settings " + auth.currentUser?.uid);
 
-    // if (auth.currentUser) {
-    //     const docRef = doc(db, "users", auth.currentUser.uid);
-    //     const docSnap = await getDoc(docRef);
-    // } else {
-    //     console.log("error. cant access settings because not logged in.");
-    // }
+    const getSettings = async () => {
+        const docRef = doc(db, "users", auth.currentUser.uid);
+        const docSnap = await getDoc(docRef);
+        settingsString = JSON.stringify(docSnap.data());
+    };
+
+    getSettings();
 </script>
 
 <div class="SettingsPopup">
     <h2>Adjust Settings 🔧</h2>
     {#if auth.currentUser}
-        <!-- <p>Profile Data: {JSON.stringify(docSnap.data())}</p> -->
+        <p>Profile Data: {settingsString}</p>
     {/if}
 </div>
