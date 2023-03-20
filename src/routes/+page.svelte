@@ -1,17 +1,13 @@
-<script>
+<script context="module">
     import { initializeApp } from "firebase/app";
-    import {
-        getAuth,
-        createUserWithEmailAndPassword,
-        signInWithEmailAndPassword,
-        signOut,
-    } from "firebase/auth";
+    import { getAuth } from "firebase/auth";
 
     import Button from "./Button.svelte";
     import ActionBar from "./ActionBar.svelte";
     import RegisterForm from "./RegisterForm.svelte";
     import LoginForm from "./LoginForm.svelte";
     import LogoutButton from "./LogoutButton.svelte";
+    import SettingsModal from "./SettingsModal.svelte";
 
     const firebaseConfig = {
         apiKey: "AIzaSyDL9Vfw5AJKfmeeXFRlFuyMKvH16C8lyGk",
@@ -23,10 +19,10 @@
     };
 
     //Init firebase app
-    const app = initializeApp(firebaseConfig);
+    export const app = initializeApp(firebaseConfig);
     console.log(app);
 
-    const auth = getAuth();
+    export const auth = getAuth();
 </script>
 
 <h1>Welcome to Pwofi!</h1>
@@ -46,6 +42,8 @@ UID: ${auth.currentUser?.uid}`);
 <LogoutButton />
 
 <ActionBar />
+
+<SettingsModal />
 
 <style>
     :global(*) {
