@@ -1,6 +1,11 @@
-<script context="module">
+<script>
+    import { app, auth } from "./app.js";
+
     import { initializeApp } from "firebase/app";
     import { getAuth } from "firebase/auth";
+    import { writable } from "svelte/store";
+
+    //Component Imports
 
     import Button from "./Button.svelte";
     import ActionBar from "./ActionBar.svelte";
@@ -9,20 +14,20 @@
     import LogoutButton from "./LogoutButton.svelte";
     import SettingsModal from "./SettingsModal.svelte";
 
-    const firebaseConfig = {
-        apiKey: "AIzaSyDL9Vfw5AJKfmeeXFRlFuyMKvH16C8lyGk",
-        authDomain: "pwofibeta.firebaseapp.com",
-        projectId: "pwofibeta",
-        storageBucket: "pwofibeta.appspot.com",
-        messagingSenderId: "612729901997",
-        appId: "1:612729901997:web:cbfddce6f2bf647eb20724",
-    };
-
     //Init firebase app
-    export const app = initializeApp(firebaseConfig);
-    console.log(app);
+    // export const firebaseConfig = {
+    //     apiKey: "AIzaSyDL9Vfw5AJKfmeeXFRlFuyMKvH16C8lyGk",
+    //     authDomain: "pwofibeta.firebaseapp.com",
+    //     projectId: "pwofibeta",
+    //     storageBucket: "pwofibeta.appspot.com",
+    //     messagingSenderId: "612729901997",
+    //     appId: "1:612729901997:web:cbfddce6f2bf647eb20724",
+    // };
 
-    export const auth = getAuth();
+    // const app = initializeApp(firebaseConfig);
+    // console.log(app);
+
+    // const auth = getAuth();
 </script>
 
 <h1>Welcome to Pwofi!</h1>
@@ -36,14 +41,15 @@ UID: ${auth.currentUser?.uid}`);
     }}>Check Auth</button
 >
 
-<RegisterForm />
-<LoginForm />
-
-<LogoutButton />
-
-<ActionBar />
-
-<SettingsModal />
+{#if auth.currentUser}
+    <LogoutButton />
+    <ActionBar />
+    <SettingsModal />
+{:else}
+    <RegisterForm />
+    <LoginForm />
+    <LogoutButton />
+{/if}
 
 <style>
     :global(*) {

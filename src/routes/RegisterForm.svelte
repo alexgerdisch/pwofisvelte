@@ -1,10 +1,9 @@
 <script>
-    import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+    import { auth } from "./app.js";
+    import { createUserWithEmailAndPassword } from "firebase/auth";
 
     let email;
     let password;
-
-    const auth = getAuth();
 
     const registerUserViaEmail = async () => {
         try {

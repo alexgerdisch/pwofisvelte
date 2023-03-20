@@ -1,15 +1,15 @@
 <script>
-    import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+    import { auth } from "./app.js";
+    import { signInWithEmailAndPassword } from "firebase/auth";
     let email;
     let password;
-
-    const auth = getAuth();
 
     const loginUserViaEmail = () => {
         // Send login request to Firebase Auth
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
+                console.log("logged in as " + user.email);
             })
             .catch((error) => {
                 console.error(error.code + error.message);
