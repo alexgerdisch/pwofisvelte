@@ -11,7 +11,7 @@
     console.log("settings " + auth.currentUser?.uid);
 
     const getSettings = async () => {
-        const docRef = doc(db, "users", auth.currentUser.uid);
+        const docRef = doc(db, "users", auth.currentUser?.uid);
         const docSnap = await getDoc(docRef);
         settingsString = JSON.stringify(docSnap.data());
     };

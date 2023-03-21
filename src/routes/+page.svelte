@@ -1,7 +1,7 @@
 <script>
-    import { app, auth } from "./app.js";
+    import { auth } from "./app.js";
 
-    import { writable } from "svelte/store";
+    // import { writable } from "svelte/store";
 
     //Component Imports
 
@@ -22,9 +22,11 @@
 <RegisterForm />
 <LoginForm />
 
-<LogoutButton />
-<ActionBar />
-<SettingsModal />
+{#if auth.user}
+    <LogoutButton />
+    <ActionBar />
+    <SettingsModal />
+{/if}
 
 <style>
     :global(*) {
