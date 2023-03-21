@@ -1,7 +1,10 @@
 <script>
     import { auth } from "./app.js";
 
-    // import { writable } from "svelte/store";
+    import { writable } from "svelte/store";
+
+    import { onMount } from "svelte"
+    
 
     //Component Imports
 
@@ -12,6 +15,29 @@
     import LogoutButton from "./LogoutButton.svelte";
     import SettingsModal from "./SettingsModal.svelte";
     import AuthChecker from "./AuthChecker.svelte";
+
+
+    export const currentUser = writable();
+
+    export const listenForAuthChanges = () => {
+        return auth.onIdTokenChanged(details => {
+            if (details) {
+                currentUser.set({
+                    email: details.email,
+                    uid: details.uid,
+                })
+            } else {
+                currentUser.set(null)
+            }
+        })
+    }
+
+    onMount(async () => {
+        return listenForAuthChanges()
+    })
+
+
+
 </script>
 
 <Logo />
@@ -19,18 +45,23 @@
 
 <AuthChecker />
 
+
+{#if $currentUser != null }
+<ActionBar />
+<SettingsModal />
+<LogoutButton />
+{:else}
 <RegisterForm />
 <LoginForm />
-
-{#if auth.user}
-    <LogoutButton />
-    <ActionBar />
-    <SettingsModal />
 {/if}
+
+
+
 
 <style>
     :global(*) {
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
             sans-serif;
     }
+
 </style>
