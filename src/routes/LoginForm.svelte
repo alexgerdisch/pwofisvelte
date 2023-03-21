@@ -21,11 +21,11 @@
 
 <form on:submit|preventDefault={loginUserViaEmail}>
     <label for="email">Email</label>
-    <input type="email" id="email" name="email" bind:value={email} />
+    <input type="email" id="login-email" name="email" bind:value={email} />
     <label for="password">Password</label>
     <input
         type="password"
-        id="password"
+        id="login-password"
         name="password"
         bind:value={password}
     />

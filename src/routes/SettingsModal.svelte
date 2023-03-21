@@ -10,18 +10,22 @@
 
     console.log("settings " + auth.currentUser?.uid);
 
-    const getSettings = async () => {
-        const docRef = doc(db, "users", auth.currentUser?.uid);
-        const docSnap = await getDoc(docRef);
-        settingsString = JSON.stringify(docSnap.data());
-    };
+    // const getSettings = async () => {
+    //     const docRef = doc(db, "users", auth.currentUser?.uid);
+    //     const docSnap = await getDoc(docRef);
+    //     settingsString = JSON.stringify(docSnap.data());
+    // };
 
-    getSettings();
+    // getSettings();
 </script>
 
-<div class="SettingsPopup">
+<div class="settings-popup">
     <h2>Adjust Settings 🔧</h2>
-    {#if auth.currentUser}
+    <!-- {#if auth.currentUser}
         <p>Profile Data: {settingsString}</p>
-    {/if}
+    {/if} -->
 </div>
+
+<style>
+
+</style>
