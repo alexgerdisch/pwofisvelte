@@ -1,5 +1,5 @@
 <script>
-    let current = "Follow-Up 👋";
+    export let current;
 </script>
 
 <div id="action-bar-wrapper">
@@ -21,7 +21,9 @@
         class={current === "Custom ⚙️" ? "selected" : ""}
         on:click={() => (current = "Custom ⚙️")}>Custom ⚙️</button
     >
+
 </div>
+
 
 <style>
     button {
@@ -34,6 +36,7 @@
     }
 
     #action-bar-wrapper {
-        margin: 20px;
+        display: flex;
+        flex-direction: row;
     }
 </style>
