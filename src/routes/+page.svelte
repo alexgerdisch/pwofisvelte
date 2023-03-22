@@ -7,7 +7,7 @@
     //Component Imports
 
     import Logo from "./Logo.svelte";
-    import ActionBar from "./ActionBar.svelte";
+    import RequestArea from "./RequestArea.svelte"
     import RegisterForm from "./RegisterForm.svelte";
     import LoginForm from "./LoginForm.svelte";
     import LogoutButton from "./LogoutButton.svelte";
@@ -26,8 +26,8 @@
 <AuthChecker />
 
 
-{#if $currentUser != null }
-<ActionBar />
+{#if $currentUser}
+<RequestArea />
 <SettingsModal />
 <LogoutButton />
 {:else}
