@@ -1,31 +1,44 @@
 <script>
-    import { app, auth } from "./app.js";
+    import { app, currentUser } from "./app.js";
     import { getFirestore, doc, getDoc } from "firebase/firestore";
+
 
     const db = getFirestore(app);
 
-    let settingsString = "";
+    let settings = {};
 
-    console.log("this is auth:" + auth.currentUser);
+    console.log("this is UID in settings:" + $currentUser.uid);
 
-    console.log("settings " + auth.currentUser?.uid);
 
-    // const getSettings = async () => {
-    //     const docRef = doc(db, "users", auth.currentUser?.uid);
-    //     const docSnap = await getDoc(docRef);
-    //     settingsString = JSON.stringify(docSnap.data());
-    // };
+    const getSettings = async () => {
+        const docRef = doc(db, "users", $currentUser.uid);
+        const docSnap = await getDoc(docRef);
+        console.log(docSnap.data())
+        settings = {...docSnap.data()};
+    };
 
-    // getSettings();
+    getSettings();
+
 </script>
 
 <div class="settings-popup">
-    <h2>Adjust Settings 🔧</h2>
-    <!-- {#if auth.currentUser}
-        <p>Profile Data: {settingsString}</p>
-    {/if} -->
+    <h2>Profile & Settings 🔧</h2>
+    {#if $currentUser != null}
+    <div class="details">
+        <div class="settings-label">Name:</div>
+        <p class="settings-value" id="full-name">{`${settings.userFirstName} ${settings.userLastName}`}</p>
+        <div class="settings-label">Name:</div>
+        
+
+    </div>
+    
+    {/if}
+
+    <button on:click={e => console.log($currentUser.uid)}>Real time UID test..</button>
 </div>
 
 <style>
-
+    .settings-label {
+        font-size: .5rem;
+    }
 </style>

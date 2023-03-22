@@ -1,7 +1,5 @@
 <script>
-    import { auth } from "./app.js";
-
-    import { writable } from "svelte/store";
+    import { currentUser, listenForAuthChanges } from "./app.js";
 
     import { onMount } from "svelte"
     
@@ -16,27 +14,9 @@
     import SettingsModal from "./SettingsModal.svelte";
     import AuthChecker from "./AuthChecker.svelte";
 
-
-    export const currentUser = writable();
-
-    export const listenForAuthChanges = () => {
-        return auth.onIdTokenChanged(details => {
-            if (details) {
-                currentUser.set({
-                    email: details.email,
-                    uid: details.uid,
-                })
-            } else {
-                currentUser.set(null)
-            }
-        })
-    }
-
     onMount(async () => {
         return listenForAuthChanges()
     })
-
-
 
 </script>
 
