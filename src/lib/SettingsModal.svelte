@@ -1,6 +1,7 @@
 <script>
   import { app, currentUser } from "$lib/util/app.js";
   import { getFirestore, doc, getDoc } from "firebase/firestore";
+  import { checkSettingsJs } from "$lib/util/settings.js";
 
   const db = getFirestore(app);
 
@@ -20,6 +21,7 @@
   };
 
   getSettings();
+  checkSettingsJs();
 </script>
 
 <div class="settings-popup">
