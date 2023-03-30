@@ -16,6 +16,8 @@
   onMount(async () => {
     return listenForAuthChanges();
   });
+
+  const restrict = 1;
 </script>
 
 <Logo />
@@ -25,8 +27,11 @@
 
 {#if $currentUser}
   <RequestArea />
-  <SettingsModal />
+
   <LogoutButton />
+  {#if restrict === 1}
+    <SettingsModal />
+  {/if}
 {:else}
   <RegisterForm />
   <LoginForm />

@@ -1,9 +1,6 @@
 <script>
-  import { app, currentUser } from "$lib/util/app.js";
-  import { getFirestore, doc, getDoc } from "firebase/firestore";
+  import { currentUser } from "$lib/util/app.js";
   import { updateSettingsStore, settings } from "$lib/util/settings.js";
-
-  const db = getFirestore(app);
 
   let impacts = [];
   let pains = [];
