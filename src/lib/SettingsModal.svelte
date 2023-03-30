@@ -1,27 +1,17 @@
 <script>
   import { app, currentUser } from "$lib/util/app.js";
   import { getFirestore, doc, getDoc } from "firebase/firestore";
-  import { checkSettingsJs } from "$lib/util/settings.js";
+  import { updateSettingsStore, settings } from "$lib/util/settings.js";
 
   const db = getFirestore(app);
 
-  let settings = {};
   let impacts = [];
   let pains = [];
 
-  console.log("this is UID in settings:" + $currentUser.uid);
-
-  const getSettings = async () => {
-    const docRef = doc(db, "users", $currentUser.uid);
-    const docSnap = await getDoc(docRef);
-    console.log(docSnap.data());
-    settings = { ...docSnap.data() };
-    impacts = [...settings.valueDrivers];
-    pains = [...settings.painPoints];
-  };
-
-  getSettings();
-  checkSettingsJs();
+  updateSettingsStore().then(() => {
+    impacts = [...$settings.valueDrivers];
+    pains = [...$settings.painPoints];
+  });
 </script>
 
 <div class="settings-popup">
@@ -30,14 +20,14 @@
     <div class="details">
       <div class="settings-label">Name:</div>
       <p class="settings-value" id="full-name">
-        {`${settings.userFirstName} ${settings.userLastName}`}
+        {`${$settings.userFirstName} ${$settings.userLastName}`}
       </p>
       <div class="settings-label">Email:</div>
-      <p class="settings-value" id="email">{settings.email}</p>
+      <p class="settings-value" id="email">{$settings.email}</p>
       <div class="settings-label">Company:</div>
-      <p class="settings-value" id="company">{settings.company}</p>
+      <p class="settings-value" id="company">{$settings.company}</p>
       <div class="settings-label">Industry:</div>
-      <p class="settings-value" id="industry">{settings.company}</p>
+      <p class="settings-value" id="industry">{$settings.company}</p>
       <ul class="settings-label">
         Impacts:
         {#each impacts as impact}
@@ -51,6 +41,10 @@
           <li>{pain}</li>
         {/each}
       </ul>
+    </div>
+
+    <div>
+      <p>{JSON.stringify($settings)}</p>
     </div>
   {/if}
 
