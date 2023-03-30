@@ -1,6 +1,7 @@
 <script>
   import { currentUser } from "$lib/util/app.js";
   import { updateSettingsStore, settings } from "$lib/util/settings.js";
+  import SettingsForm from "$lib/SettingsForm.svelte";
 
   let impacts = [];
   let pains = [];
@@ -24,7 +25,7 @@
       <div class="settings-label">Company:</div>
       <p class="settings-value" id="company">{$settings.company}</p>
       <div class="settings-label">Industry:</div>
-      <p class="settings-value" id="industry">{$settings.company}</p>
+      <p class="settings-value" id="industry">{$settings.industry}</p>
       <ul class="settings-label">
         Impacts:
         {#each impacts as impact}
@@ -39,16 +40,10 @@
         {/each}
       </ul>
     </div>
-
-    <div>
-      <p>{JSON.stringify($settings)}</p>
-    </div>
   {/if}
-
-  <button on:click={(e) => console.log($currentUser.uid)}
-    >Real time UID test..</button
-  >
 </div>
+
+<SettingsForm />
 
 <style>
   .settings-label {

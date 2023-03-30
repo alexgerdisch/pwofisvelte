@@ -3,7 +3,7 @@ import { getFirestore, doc, getDoc } from "firebase/firestore";
 import { writable } from "svelte/store";
 
 
-const db = getFirestore(app);
+export const db = getFirestore(app);
 
 export const settings = writable({});
 
