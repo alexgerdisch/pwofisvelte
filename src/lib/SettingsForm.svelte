@@ -9,9 +9,10 @@
     let lastName;
     let company;
     let industry;
-    let currentValueDriver;
-    let valueArray;
-    let painArray;
+    let currentValueDriver = '';
+    let currentPainPoint = '';
+    let valueArray = [];
+    let painArray = [];
 
     const updateFirestore = () => {
         setDoc(
@@ -27,6 +28,22 @@
             { merge: true }
         ).catch((error) => console.error(error));
     };
+
+    const addToValueArray = () => {
+        if (currentValueDriver.length > 0) {
+            valueArray = [...valueArray, currentValueDriver]
+            currentValueDriver = '';
+        }
+        
+    };
+
+    const addToPainArray = () => {
+        if (currentPainPoint.length > 0) {
+            painArray = [...painArray, currentPainPoint]
+            currentPainPoint = '';
+        }
+        
+    };
 </script>
 
 <form on:submit|preventDefault={updateFirestore}>
@@ -38,8 +55,30 @@
     <input type="text" name="company" bind:value={company} />
     <label for="industry">Industry</label>
     <input type="text" name="industry" bind:value={industry} />
-    <label for="value-drivers">Impacts</label>
-    <input type="text" name="value-drivers" bind:value={currentValueDriver} />
+    <div class="list-holder">
+        <div class="value-container">
+            <label for="value-drivers">Impacts</label>
+            <input type="text" name="value-drivers" bind:value={currentValueDriver}/>
+            <button type="button" display="inline" on:click={addToValueArray} >+</button>
+            <div class="value-box">
+            {#each valueArray as value}
+                <p>{value}</p>
+            {/each}
+            </div>
+        </div>
+        <div class="pain-container">
+            <label for="pain-points">Pain Points</label>
+            <input type="text" name="pain-points" bind:value={currentPainPoint}/>
+            <button type="button" display="inline" on:click={addToPainArray} >+</button>
+            <div class="reverse-flex">
+            {#each painArray as pain}
+                <p>{pain}</p>
+            {/each}
+            </div>
+        </div>
+
+    </div>
+
     <input type="submit" value="Submit" />
 </form>
 
@@ -49,5 +88,15 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+    }
+
+    .reverse-flex {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .list-holder {
+        display: flex;
+        flex-direction: row;
     }
 </style>
