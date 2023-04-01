@@ -9,6 +9,7 @@
     let lastName;
     let company;
     let industry;
+    let currentValueDriver;
     let valueArray;
     let painArray;
 
@@ -37,6 +38,8 @@
     <input type="text" name="company" bind:value={company} />
     <label for="industry">Industry</label>
     <input type="text" name="industry" bind:value={industry} />
+    <label for="value-drivers">Impacts</label>
+    <input type="text" name="value-drivers" bind:value={currentValueDriver} />
     <input type="submit" value="Submit" />
 </form>
 
