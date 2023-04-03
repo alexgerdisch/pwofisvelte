@@ -25,6 +25,8 @@
     settingsVisible = !settingsVisible
   }
 
+
+
 </script>
 <div id="app-container">
   <Logo />
