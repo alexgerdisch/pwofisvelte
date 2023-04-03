@@ -12,23 +12,32 @@
   import LogoutButton from "$lib/LogoutButton.svelte";
   import SettingsModal from "$lib/SettingsModal.svelte";
   import AuthChecker from "$lib/AuthChecker.svelte";
+  
 
   onMount(async () => {
     return listenForAuthChanges();
   });
 
-  const restrict = 1;
+
+  let settingsVisible = false;
+
+  function toggleVisible() {
+    settingsVisible = !settingsVisible
+  }
+
 </script>
 <div id="app-container">
   <Logo />
   <h1>Welcome to Pwofi!</h1>
   <AuthChecker />
+  
   {#if $currentUser}
-    <RequestArea />
+    <button on:click={toggleVisible}>Settings 🔧</button>
     <LogoutButton />
-    {#if restrict === 1}
-      <SettingsModal />
-    {/if}
+    <RequestArea />
+   {#if settingsVisible}
+    <SettingsModal />
+   {/if}
   {:else}
     <RegisterForm />
     <LoginForm />
