@@ -19,27 +19,34 @@
 
   const restrict = 1;
 </script>
-
-<Logo />
-<h1>Welcome to Pwofi!</h1>
-
-<AuthChecker />
-
-{#if $currentUser}
-  <RequestArea />
-
-  <LogoutButton />
-  {#if restrict === 1}
-    <SettingsModal />
+<div id="app-container">
+  <Logo />
+  <h1>Welcome to Pwofi!</h1>
+  <AuthChecker />
+  {#if $currentUser}
+    <RequestArea />
+    <LogoutButton />
+    {#if restrict === 1}
+      <SettingsModal />
+    {/if}
+  {:else}
+    <RegisterForm />
+    <LoginForm />
   {/if}
-{:else}
-  <RegisterForm />
-  <LoginForm />
-{/if}
+</div>
+
 
 <style>
   :global(*) {
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
       sans-serif;
   }
+
+  #app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
 </style>

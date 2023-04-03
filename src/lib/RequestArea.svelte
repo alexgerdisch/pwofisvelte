@@ -1,5 +1,21 @@
 <script>
-  import ActionBar from "$lib/ActionBar.svelte";
+
 </script>
 
-<ActionBar current="Custom ⚙️" />
+<section id="request-area">
+
+
+</section>
+
+
+
+
+<style>
+  #request-area {
+    width: 750px;
+    height: 500px;
+    background-color: grey;
+
+  }
+
+</style>

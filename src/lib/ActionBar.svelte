@@ -4,22 +4,22 @@
 
 <div id="action-bar-wrapper">
     <button
-        class={current === "Follow-up 👋" ? "selected" : ""}
-        on:click={() => (current = "Follow-up 👋")}>Follow-up 👋</button
+        class={current === "Follow-up" ? "selected" : ""}
+        on:click={() => (current = "Follow-up")}>Follow-up 👋</button
     >
 
     <button
-        class={current === "Cold Outreach 🥶" ? "selected" : ""}
-        on:click={() => (current = "Cold Outreach 🥶")}>Cold Outreach 🥶</button
+        class={current === "Cold Outreach" ? "selected" : ""}
+        on:click={() => (current = "Cold Outreach")}>Cold Outreach 🥶</button
     >
 
     <button
-        class={current === "Warm Referral 🤝" ? "selected" : ""}
-        on:click={() => (current = "Warm Referral 🤝")}>Warm Referral 🤝</button
+        class={current === "Warm Referral" ? "selected" : ""}
+        on:click={() => (current = "Warm Referral")}>Warm Referral 🤝</button
     >
     <button
-        class={current === "Custom ⚙️" ? "selected" : ""}
-        on:click={() => (current = "Custom ⚙️")}>Custom ⚙️</button
+        class={current === "Custom" ? "selected" : ""}
+        on:click={() => (current = "Custom")}>Custom ⚙️</button
     >
 
 </div>
