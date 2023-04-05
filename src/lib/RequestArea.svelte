@@ -1,8 +1,19 @@
 <script>
+import { requestPwofiApi } from "$lib/util/request.js"
+
+let chatContainer;
+let currentResponse;
+
+const renderResponse = async () => {
+  currentResponse = await requestPwofiApi();
+  const child = document.createElement('p');
+  child.textContent = currentResponse;
+  chatContainer.appendChild(child);
+}
 
 </script>
 
-<section id="request-area">
+<section id="request-area" bind:this={chatContainer}>
 
 
  
@@ -11,7 +22,7 @@
 </section>
 <div id="input-wrapper">
   <input type="text" id="user-request" />
-  <button id="request-btn">➕</button>
+  <button id="request-btn" on:click={renderResponse}>➕</button>
 
 </div>
 
