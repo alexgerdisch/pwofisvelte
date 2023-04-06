@@ -46,7 +46,9 @@
 <SettingsForm />
 
 <style>
-  .settings-label {
-    color: #333;
+
+  .details {
+    color: #e9e5e5;
   }
+
 </style>

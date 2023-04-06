@@ -29,7 +29,7 @@
   <label for="password">Password</label>
   <input type="password" id="password" name="password" bind:value={password} />
   <br />
-  <input type="submit" value="Submit" />
+  <input type="submit" value="Submit" class="button" />
 </form>
 
 <style>

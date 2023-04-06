@@ -30,12 +30,15 @@
 </script>
 <div id="app-container">
   <Logo />
-  <h1>Welcome to Pwofi!</h1>
-  <AuthChecker />
+  <h1 style="color:#f7f7f7">Welcome to Pwofi!</h1>
+  
   
   {#if $currentUser}
-    <button on:click={toggleVisible}>Settings 🔧</button>
-    <LogoutButton />
+    <div class="action-bar">
+      <AuthChecker />
+      <button on:click={toggleVisible} class="button">Settings 🔧</button>
+      <LogoutButton />
+    </div>
     <RequestArea />
    {#if settingsVisible}
     <SettingsModal />
@@ -53,11 +56,25 @@
       sans-serif;
   }
 
+  :global(.button) {
+    font-size: 1rem;
+    height: 30px;
+    width: 90px;
+    background-color: #f9af9e;
+    
+    border: none;
+    margin: 5px;
+  }
+  
+
   #app-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+
   }
+
+
 
 
 </style>

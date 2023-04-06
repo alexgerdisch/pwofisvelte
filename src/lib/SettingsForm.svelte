@@ -99,4 +99,8 @@
         display: flex;
         flex-direction: row;
     }
+
+    button {
+        width: 35px;
+    }
 </style>

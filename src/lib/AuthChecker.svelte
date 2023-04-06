@@ -3,7 +3,7 @@
 </script>
 
 <button
-  class="auth-checker"
+  class="auth-checker button"
   on:click={() => {
     alert(`${auth.currentUser?.email} logged in
 UID: ${auth.currentUser?.uid}`);

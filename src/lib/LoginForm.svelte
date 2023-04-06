@@ -29,7 +29,7 @@
     name="password"
     bind:value={password}
   />
-  <input type="submit" value="Submit" />
+  <input type="submit" value="Submit" class="button" />
 </form>
 
 <style>

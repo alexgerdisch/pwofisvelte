@@ -13,4 +13,4 @@
   };
 </script>
 
-<button id="signout" on:click={logUserOut}>Sign Out</button>
+<button id="signout" class="button" on:click={logUserOut}>Sign Out</button>
