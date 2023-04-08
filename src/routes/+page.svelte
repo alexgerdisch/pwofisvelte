@@ -64,7 +64,7 @@
     font-size: 1rem;
     height: 30px;
     width: 90px;
-    background-color: #074141d5;
+    background-color: #032020d5;
     color: white;
     border-radius: 2px;
     
