@@ -1,37 +1,47 @@
 <script>
 import { requestPwofiApi } from "$lib/util/request.js"
+import { Session } from "$lib/util/session.js"
 
 let chatContainer;
 let currentResponse;
 let userInput;
 
+let activeSession = new Session("custom");
+
+
 const renderResponse = async () => {
   
-  // currentResponse = await requestPwofiApi();
-  currentResponse = 'lorem ipsum dolor sit amit okokokokok';
+  currentResponse = await requestPwofiApi(activeSession);
+  activeSession.convo = [...activeSession.convo, {role: "assistant", content: currentResponse}]
   const child = document.createElement('p');
   child.textContent = currentResponse;
   child.classList.add("child");
   chatContainer.appendChild(child);
+}
+
+
+
+const addToSession = async () => {
+  activeSession.convo = [...activeSession.convo, {role: "user", content: userInput.value}];
+  const userReqElement = document.createElement('p');
+  userReqElement.textContent = userInput.value;
+  userReqElement.classList.add("user-request");
+  chatContainer.appendChild(userReqElement)
   userInput.value = '';
+  renderResponse();
+
 }
 
 </script>
 
 <section id="request-area" bind:this={chatContainer}>
-
-
- 
-
-  
+<!-- Chat contents get appended here -->
+<!-- Both user requests and assistant responses -->
 </section>
 <form id="input-wrapper">
   <input type="text" id="user-request" bind:this={userInput} />
-  <button id="request-btn" on:click|preventDefault={renderResponse}>🚀</button>
-
+  <button id="request-btn" on:click|preventDefault={addToSession}>🚀</button>
 </form>
-
-
 
 
 
@@ -39,7 +49,7 @@ const renderResponse = async () => {
 <style>
   #request-area {
     width: 750px;
-    height: 500px;
+    height: 750px;
     background-color: rgb(19, 19, 19);
     display: flex;
     flex-direction: column;
@@ -67,6 +77,13 @@ const renderResponse = async () => {
 
   :global(.child) {
     color: rgb(235, 245, 239);
+    font-size: 1.2rem;
+
+  }
+
+  :global(.user-request) {
+    color: rgb(191, 202, 196);
+    font-size: 1.2rem;
   }
 
 </style>

@@ -1,17 +1,9 @@
-const reqObj = {
-    uid: "XXXXXXXXXXX",
-    painPoints: "low win rate on deals, time wasted drafting, not progressing deals",
-    valueDrivers: "higher deal win rates, more productive sales people",
-    companyName: "Pwofi",
-    meetingType: "intro call",
-    nextStep: "product demo"
 
-}
 
-export async function requestPwofiApi() {
+export async function requestPwofiApi(reqObj) {
     console.log("attempting request to Pwofi backend...");
     console.log(reqObj);
-    const res = await fetch("https://us-central1-pwofibeta.cloudfunctions.net/api/followup", {
+    const res = await fetch("https://us-central1-pwofibeta.cloudfunctions.net/api/", {
         method: "POST",
         headers: {
             "Content-type": "application/json"
