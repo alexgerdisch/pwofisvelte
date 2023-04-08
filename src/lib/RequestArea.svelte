@@ -50,7 +50,7 @@ const addToSession = async () => {
   #request-area {
     width: 750px;
     height: 600px;
-    background-color: rgb(19, 19, 19);
+    background-image: linear-gradient(to bottom, #181a21, #14181f, #0f171c, #0a1519, #041316);
     display: flex;
     flex-direction: column;
     overflow-y: auto;
