@@ -13,10 +13,10 @@ const renderResponse = async () => {
   
   currentResponse = await requestPwofiApi(activeSession);
   activeSession.convo = [...activeSession.convo, {role: "assistant", content: currentResponse}]
-  const child = document.createElement('p');
-  child.textContent = currentResponse;
-  child.classList.add("child");
-  chatContainer.appendChild(child);
+  const assistantResElement = document.createElement('p');
+  assistantResElement.textContent = currentResponse;
+  assistantResElement.classList.add("assistant-response", "convo-item");
+  chatContainer.appendChild(assistantResElement);
 }
 
 
@@ -25,7 +25,7 @@ const addToSession = async () => {
   activeSession.convo = [...activeSession.convo, {role: "user", content: userInput.value}];
   const userReqElement = document.createElement('p');
   userReqElement.textContent = userInput.value;
-  userReqElement.classList.add("user-request");
+  userReqElement.classList.add("user-request", "convo-item");
   chatContainer.appendChild(userReqElement)
   userInput.value = '';
   renderResponse();
@@ -75,15 +75,21 @@ const addToSession = async () => {
     
   }
 
-  :global(.child) {
-    color: rgb(235, 245, 239);
+  :global(.convo-item) {
     font-size: 1.2rem;
+    margin: 7px;
+
+  }
+
+  :global(.assistant-response) {
+    color: rgb(235, 245, 239);
+    
 
   }
 
   :global(.user-request) {
     color: rgb(191, 202, 196);
-    font-size: 1.2rem;
+
   }
 
 </style>

@@ -56,11 +56,16 @@
       sans-serif;
   }
 
+  :global(body) {
+    background-image: radial-gradient(circle, #2c3656, #253f5c, #1f475f, #1f4e60, #255560);
+  }
+
   :global(.button) {
     font-size: 1rem;
     height: 30px;
     width: 90px;
-    background-color: #3bf7f7d5;
+    background-color: #074141d5;
+    color: white;
     border-radius: 2px;
     
     border: none;
