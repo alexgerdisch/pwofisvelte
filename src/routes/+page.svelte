@@ -60,7 +60,8 @@
     font-size: 1rem;
     height: 30px;
     width: 90px;
-    background-color: #f9af9e;
+    background-color: #3bf7f7d5;
+    border-radius: 2px;
     
     border: none;
     margin: 5px;

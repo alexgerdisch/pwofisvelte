@@ -39,7 +39,7 @@ const addToSession = async () => {
 <!-- Both user requests and assistant responses -->
 </section>
 <form id="input-wrapper">
-  <input type="text" id="user-request" bind:this={userInput} />
+  <input type="text" id="user-request" placeholder="Send a request..." bind:this={userInput} />
   <button id="request-btn" on:click|preventDefault={addToSession}>🚀</button>
 </form>
 
@@ -49,7 +49,7 @@ const addToSession = async () => {
 <style>
   #request-area {
     width: 750px;
-    height: 750px;
+    height: 600px;
     background-color: rgb(19, 19, 19);
     display: flex;
     flex-direction: column;
