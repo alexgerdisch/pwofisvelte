@@ -1,65 +1,83 @@
 <script>
-export let assistName = "button";
+export let assistName = "Follow-up";
+export let active = false;
+
+if (active === true) {
+    console.log(`Active Assist: ${assistName}`);
+}
 </script>
 
-<div id="btn-wrapper">
-    <div id="top-layer" class="btn"><p>{assistName}</p></div>
-    <div id="bottom-layer" class="btn"></div>
-</div>
-
+    
+        <div id="box-layer" class="btn">
+            <p id="text-layer">{assistName}</p>
+            <div id="color-layer"></div>
+            <div id="outline-layer" class="btn"></div>
+        </div>
+        
+    
 
 
 <style>
 
-    #btn-wrapper {
-        position: relative;
-        margin: 10px;
-        
-    }
-
-    #top-layer {
-        background-color: rgb(21, 65, 65);
-        position: absolute;
-        z-index: 1;
-        
-        border-top-right-radius: 5px;
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: top 0.05s, left 0.05s;
-    }
-
-    #bottom-layer {
-        background-color: rgb(144, 173, 173);
-        position: relative;
-        top: 3px;
-        left: 2px;
-        border-top-right-radius: 6px;
-        border-top-left-radius: 15px;
-        border-bottom-left-radius: 6px;
-        
-    }
     
 
-    #top-layer:hover {
-        top: -1px;
-        left: -1px;
+    #text-layer {
+        position: absolute;
+        z-index: 1;
+        color: white;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        
+        transition: color 200ms, font-size 200ms;
+
     }
 
-    #top-layer:active {
-        top: 3px;
-        left: 2px
+    #color-layer {
+        background-color: rgb(101, 158, 149);
+        width: 110px;
+        height: 48px;
+        position: absolute;
+
     }
 
-    .btn {
-        width: 120px;
-        height: 45px;
+    #box-layer {
+        margin: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;;
+        width: 130px;
+        height: 65px;
         
     }
-    p {
-        color: white;
+
+    #outline-layer {
+        position: relative;
+        width: 118px;
+        height: 56px;
+    
+        border: 1px solid rgb(144, 230, 215);
+        transition: border 75ms, width 75ms, height 75ms;
     }
 
+    #box-layer:hover > #text-layer { 
+        color: #005e52;
+        font-size: 1.1rem;
+
+    }
+
+    #box-layer:hover > #color-layer { 
+        background-color: rgb(191, 221, 217);
+    }
+
+    #box-layer:hover > #outline-layer { 
+        border: 4px solid rgb(178, 221, 215);
+        width: 120px;
+        height: 58px;
+    }
+
+    
+
+
+
 </style>
+
