@@ -7,14 +7,13 @@ if (active === true) {
 }
 </script>
 
-    
-        <div id="box-layer" class="btn">
-            <p id="text-layer">{assistName}</p>
-            <div id="color-layer"></div>
-            <div id="outline-layer" class="btn"></div>
-        </div>
-        
-    
+
+<div id="box-layer">
+    <p id="text-layer">{assistName}</p>
+    <div id="color-layer"></div>
+    <div id="outline-layer"></div>
+</div>
+
 
 
 <style>
@@ -41,7 +40,8 @@ if (active === true) {
     }
 
     #box-layer {
-        margin: 25px;
+        position: relative;
+        margin: 20px;
         display: flex;
         justify-content: center;
         align-items: center;;
@@ -61,7 +61,7 @@ if (active === true) {
 
     #box-layer:hover > #text-layer { 
         color: #005e52;
-        font-size: 1.04rem;
+        font-size: 1.02rem;
 
     }
 
