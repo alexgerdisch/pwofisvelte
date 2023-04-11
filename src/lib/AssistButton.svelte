@@ -1,5 +1,5 @@
 <script>
-export let assistName = "Follow-up";
+export let assistName = "Custom";
 export let active = false;
 
 if (active === true) {
@@ -34,7 +34,7 @@ if (active === true) {
 
     #color-layer {
         background-color: rgb(101, 158, 149);
-        width: 110px;
+        width: 114px;
         height: 48px;
         position: absolute;
 
@@ -45,14 +45,14 @@ if (active === true) {
         display: flex;
         justify-content: center;
         align-items: center;;
-        width: 130px;
+        width: 134px;
         height: 65px;
         
     }
 
     #outline-layer {
         position: relative;
-        width: 118px;
+        width: 122px;
         height: 56px;
     
         border: 1px solid rgb(144, 230, 215);
@@ -61,7 +61,7 @@ if (active === true) {
 
     #box-layer:hover > #text-layer { 
         color: #005e52;
-        font-size: 1.1rem;
+        font-size: 1.04rem;
 
     }
 
@@ -71,7 +71,7 @@ if (active === true) {
 
     #box-layer:hover > #outline-layer { 
         border: 4px solid rgb(178, 221, 215);
-        width: 120px;
+        width: 126px;
         height: 58px;
     }
 

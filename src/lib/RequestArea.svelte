@@ -1,7 +1,7 @@
 <script>
 import { requestPwofiApi } from "$lib/util/request.js"
 import { Session } from "$lib/util/session.js"
-import AssistButton from "./AssistButton.svelte";
+import AssistBar from "./AssistBar.svelte";
 
 let chatContainer;
 let currentResponse;
@@ -35,10 +35,13 @@ const addToSession = async () => {
 
 </script>
 
-<section id="request-area" bind:this={chatContainer}>
-<AssistButton/>
+<section id="request-area" >
+<AssistBar/>
+<div bind:this={chatContainer}>
 <!-- Chat contents get appended here -->
 <!-- Both user requests and assistant responses -->
+</div>
+
 </section>
 <form id="input-wrapper">
   <input type="text" id="user-request" placeholder="Send a request..." bind:this={userInput} />
@@ -58,11 +61,12 @@ const addToSession = async () => {
     overflow-y: auto;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
+    z-index: 1;
    
   }
 
   #user-request {
-    width: 698px;
+    width: 682px;
     height: 30px;
     font-size: 1.3rem;
   }
@@ -73,9 +77,10 @@ const addToSession = async () => {
   }
 
   #request-btn {
-    width: 45px;
-    background-color: rgb(36, 90, 69);
+    width: 60px;
+    background-color: rgb(144, 230, 215);
     border: none;
+    
     
   }
 

@@ -30,12 +30,11 @@
 </script>
 <div id="app-container">
   <Logo />
-  <h1 style="color:#f7f7f7">Welcome to Pwofi!</h1>
   
   
   {#if $currentUser}
     <div class="action-bar">
-      <AuthChecker />
+      <!-- <AuthChecker /> -->
       <button on:click={toggleVisible} class="button">Settings 🔧</button>
       <LogoutButton />
     </div>
@@ -63,8 +62,8 @@
   :global(.button) {
     font-size: 1rem;
     height: 30px;
-    width: 90px;
-    background-color: #032020d5;
+    width: 120px;
+    background-color: #0f5e5ed5;
     color: white;
     border-radius: 2px;
     
