@@ -36,6 +36,7 @@ if (active === true) {
         width: 114px;
         height: 48px;
         position: absolute;
+        transition: background-color 200ms;
 
     }
 
@@ -47,6 +48,7 @@ if (active === true) {
         align-items: center;;
         width: 134px;
         height: 65px;
+        cursor: pointer;
         
     }
 
@@ -73,6 +75,11 @@ if (active === true) {
         border: 4px solid rgb(178, 221, 215);
         width: 126px;
         height: 58px;
+    }
+
+    #box-layer:active > #outline-layer {
+        width: 114px;
+        height: 48px;
     }
 
     

@@ -66,9 +66,17 @@ const addToSession = async () => {
   }
 
   #user-request {
-    width: 682px;
-    height: 30px;
+    width: 684px;
+    height: 45px;
     font-size: 1.3rem;
+    border: none;
+    border-right: 2px solid;
+    border-color: #2d3c3f;
+    z-index: 2;
+  }
+
+  #user-request:active {
+    border-color:rgb(144, 230, 215);
   }
 
   #input-wrapper {
@@ -77,10 +85,18 @@ const addToSession = async () => {
   }
 
   #request-btn {
+    font-size: 1.2rem;
     width: 60px;
-    background-color: rgb(144, 230, 215);
+    background-color: rgb(123, 197, 185);
     border: none;
+    transition: font-size 500ms ease, background-color 500ms ease;
     
+  
+  }
+
+  #request-btn:hover {
+    font-size: 2rem;
+    background-color: rgb(22, 36, 33);
     
   }
 
