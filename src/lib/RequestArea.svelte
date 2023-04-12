@@ -66,7 +66,7 @@ const addToSession = async () => {
   }
 
   #user-request {
-    width: 684px;
+    width: 685px;
     height: 45px;
     font-size: 1.3rem;
     border: none;
@@ -96,7 +96,7 @@ const addToSession = async () => {
 
   #request-btn:hover {
     font-size: 2rem;
-    background-color: rgb(22, 36, 33);
+    background-color: #041316;
     
   }
 

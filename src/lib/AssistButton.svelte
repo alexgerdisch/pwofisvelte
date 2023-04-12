@@ -26,9 +26,7 @@ if (active === true) {
         color: white;
         font-size: 1rem;
         letter-spacing: 1px;
-        
         transition: color 200ms, font-size 200ms;
-
     }
 
     #color-layer {
@@ -37,7 +35,6 @@ if (active === true) {
         height: 48px;
         position: absolute;
         transition: background-color 200ms;
-
     }
 
     #box-layer {
