@@ -26,7 +26,7 @@ const addToSession = async () => {
   activeSession.convo = [...activeSession.convo, {role: "user", content: userInput.value}];
   const userReqElement = document.createElement('p');
   userReqElement.textContent = userInput.value;
-  userReqElement.classList.add("user-request", "convo-item");
+  userReqElement.classList.add("user-entry", "convo-item");
   chatContainer.appendChild(userReqElement)
   userInput.value = '';
   renderResponse();
@@ -108,13 +108,11 @@ const addToSession = async () => {
 
   :global(.assistant-response) {
     color: rgb(235, 245, 239);
-    
-
+  
   }
 
-  :global(.user-request) {
+  :global(.user-entry) {
     color: rgb(191, 202, 196);
-
   }
 
 </style>

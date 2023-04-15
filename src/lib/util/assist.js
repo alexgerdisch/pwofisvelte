@@ -1,8 +1,4 @@
-export class Assist {
-    constructor(name) {
-        this.name = name;
-        this.flow = {
+import { writable } from "svelte/store";
 
-        };
-    }
-}
+const assistStore = writable({});
+

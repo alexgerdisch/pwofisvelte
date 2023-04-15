@@ -5,10 +5,16 @@ export let active = false;
 if (active === true) {
     console.log(`Active Assist: ${assistName}`);
 }
+
+
+const processAssist = assist => {
+    // process assist here.
+}
+
 </script>
 
-
-<div id="box-layer">
+<!-- A11y forced the on:keyup, it does nothing currently. -->
+<div id="box-layer" on:click={processAssist} on:keyup>
     <p id="text-layer">{assistName}</p>
     <div id="color-layer"></div>
     <div id="outline-layer"></div>
@@ -17,8 +23,6 @@ if (active === true) {
 
 
 <style>
-
-    
 
     #text-layer {
         position: absolute;
