@@ -1,7 +1,9 @@
 <script>
-import { requestPwofiApi } from "$lib/util/request.js"
-import { Session } from "$lib/util/session.js"
+import { requestPwofiApi } from "$lib/util/request.js";
+import { Session } from "$lib/util/session.js";
 import AssistBar from "./AssistBar.svelte";
+import { assistCurrent } from "$lib/util/assist.js";
+
 
 let chatContainer;
 let currentResponse;
