@@ -12,6 +12,7 @@
   import LogoutButton from "$lib/LogoutButton.svelte";
   import SettingsModal from "$lib/SettingsModal.svelte";
   import AuthChecker from "$lib/AuthChecker.svelte";
+  import Loader from "$lib/Loader.svelte";
   
 
   onMount(async () => {
@@ -30,6 +31,7 @@
 </script>
 <div id="app-container">
   <Logo />
+  <Loader />
   
   
   {#if $currentUser}
