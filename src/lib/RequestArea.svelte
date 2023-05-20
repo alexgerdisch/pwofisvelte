@@ -37,6 +37,7 @@ const addToSession = async () => {
 
 </script>
 
+
 <section id="request-area" >
 <AssistBar/>
 <div bind:this={chatContainer}>
