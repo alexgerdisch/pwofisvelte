@@ -12,7 +12,7 @@
   import LogoutButton from "$lib/LogoutButton.svelte";
   import SettingsModal from "$lib/SettingsModal.svelte";
   import AuthChecker from "$lib/AuthChecker.svelte";
-  import Loader from "$lib/Loader.svelte";
+  import Progress from "$lib/Progress.svelte";
   
 
   onMount(async () => {
@@ -29,10 +29,10 @@
 
 
 </script>
-<Logo />
+
 <div id="app-container">
-  
-  <Loader />
+  <Logo />
+  <Progress />
   
   
   {#if $currentUser}
@@ -66,8 +66,8 @@
     font-size: 1rem;
     height: 30px;
     width: 120px;
-    background-color: #0f5e5ed5;
-    color: white;
+    background-color: rgb(0, 27, 59);
+    color: rgb(255, 245, 233);
     border-radius: 2px;
     
     border: none;

@@ -27,14 +27,14 @@ const processAssist = assist => {
     #text-layer {
         position: absolute;
         z-index: 1;
-        color: white;
+        color: rgb(243, 239, 235);
         font-size: 1rem;
         letter-spacing: 1px;
         transition: color 200ms, font-size 200ms;
     }
 
     #color-layer {
-        background-color: rgb(101, 158, 149);
+        background-color: rgb(0, 27, 59);
         width: 114px;
         height: 48px;
         position: absolute;
@@ -55,25 +55,25 @@ const processAssist = assist => {
 
     #outline-layer {
         position: relative;
-        width: 122px;
-        height: 56px;
+        width: 120px;
+        height: 54px;
     
-        border: 1px solid rgb(144, 230, 215);
+        border: 1px solid rgb(0, 27, 59);
         transition: border 75ms, width 75ms, height 75ms;
     }
 
     #box-layer:hover > #text-layer { 
-        color: #005e52;
+        color: rgb(151, 198, 255);
         font-size: 1.02rem;
 
     }
 
     #box-layer:hover > #color-layer { 
-        background-color: rgb(191, 221, 217);
+        background-color: rgb(0, 27, 59);
     }
 
     #box-layer:hover > #outline-layer { 
-        border: 4px solid rgb(178, 221, 215);
+        border: 4px solid rgb(0, 27, 59);
         width: 126px;
         height: 58px;
     }
