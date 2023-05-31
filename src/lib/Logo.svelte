@@ -2,6 +2,6 @@
 
 <style>
     .logo {
-        width: 145px;
+        width: 90px;
     }
 </style>

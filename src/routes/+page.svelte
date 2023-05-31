@@ -29,8 +29,9 @@
 
 
 </script>
+<Logo />
 <div id="app-container">
-  <Logo />
+  
   <Loader />
   
   
@@ -58,7 +59,7 @@
   }
 
   :global(body) {
-    background-image: radial-gradient(circle, #2c3656, #253f5c, #1f475f, #1f4e60, #255560);
+    background-color: bisque;
   }
 
   :global(.button) {
