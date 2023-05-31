@@ -1,5 +1,5 @@
 <script>
-export let assistName = "Custom";
+export let assistName = "Custom⚙️";
 export let active = false;
 
 if (active === true) {
@@ -35,7 +35,7 @@ const processAssist = assist => {
 
     #color-layer {
         background-color: rgb(0, 27, 59);
-        width: 134px;
+        width: 174px;
         height: 48px;
         position: absolute;
         transition: background-color 200ms;
@@ -47,7 +47,7 @@ const processAssist = assist => {
         display: flex;
         justify-content: center;
         align-items: center;;
-        width: 154px;
+        width: 194px;
         height: 65px;
         cursor: pointer;
         
@@ -55,7 +55,7 @@ const processAssist = assist => {
 
     #outline-layer {
         position: relative;
-        width: 140px;
+        width: 180px;
         height: 54px;
     
         border: 1px solid rgb(0, 27, 59);
@@ -74,12 +74,12 @@ const processAssist = assist => {
 
     #box-layer:hover > #outline-layer { 
         border: 4px solid rgb(0, 27, 59);
-        width: 146px;
+        width: 186px;
         height: 58px;
     }
 
     #box-layer:active > #outline-layer {
-        width: 134px;
+        width: 174px;
         height: 48px;
     }
 

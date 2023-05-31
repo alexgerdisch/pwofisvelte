@@ -56,7 +56,7 @@ const addToSession = async () => {
 
 <style>
   #request-area {
-    width: 900px;
+    width: 980px;
     height: 600px;
     background-color: #f7f8f8;
     display: flex;
@@ -69,7 +69,7 @@ const addToSession = async () => {
   }
 
   #user-request {
-    width: 836px;
+    width: 914px;
     height: 45px;
     font-size: 1.3rem;
     border: none;

@@ -49,6 +49,9 @@
     <RegisterForm />
     <LoginForm />
   {/if}
+<section class="footer">
+    ⓒ Pwofi 2023
+</section>
 </div>
 
 
@@ -80,6 +83,11 @@
     flex-direction: column;
     align-items: center;
 
+  }
+
+  .footer {
+    margin: 30px;
+    font-size: .6rem;
   }
 
 

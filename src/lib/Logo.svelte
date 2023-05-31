@@ -1,7 +1,6 @@
 
 
 <h1 class="logo">PWOFI</h1>
-<h2 class="tagline">AI Sales Companion</h2>
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');

@@ -4,9 +4,9 @@
 
 <section id="assistBar">
     <AssistButton/>
-    <AssistButton assistName="Follow-up"/>
-    <AssistButton assistName="Cold outreach"/>
-    <AssistButton assistName="Warm Referral"/>
+    <AssistButton assistName="Follow-up📨"/>
+    <AssistButton assistName="Cold Message☃️"/>
+    <AssistButton assistName="Warm Referral🌶️"/>
 
 
 </section>
