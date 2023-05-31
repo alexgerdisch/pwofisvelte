@@ -53,9 +53,9 @@
 
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans&display=swap');
   :global(*) {
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-      sans-serif;
+    font-family: 'Instrument Sans', sans-serif;
   }
 
   :global(body) {

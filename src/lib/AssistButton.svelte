@@ -35,7 +35,7 @@ const processAssist = assist => {
 
     #color-layer {
         background-color: rgb(0, 27, 59);
-        width: 114px;
+        width: 134px;
         height: 48px;
         position: absolute;
         transition: background-color 200ms;
@@ -47,7 +47,7 @@ const processAssist = assist => {
         display: flex;
         justify-content: center;
         align-items: center;;
-        width: 134px;
+        width: 154px;
         height: 65px;
         cursor: pointer;
         
@@ -55,7 +55,7 @@ const processAssist = assist => {
 
     #outline-layer {
         position: relative;
-        width: 120px;
+        width: 140px;
         height: 54px;
     
         border: 1px solid rgb(0, 27, 59);
@@ -74,12 +74,12 @@ const processAssist = assist => {
 
     #box-layer:hover > #outline-layer { 
         border: 4px solid rgb(0, 27, 59);
-        width: 126px;
+        width: 146px;
         height: 58px;
     }
 
     #box-layer:active > #outline-layer {
-        width: 114px;
+        width: 134px;
         height: 48px;
     }
 

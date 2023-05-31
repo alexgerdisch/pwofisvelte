@@ -48,7 +48,7 @@
 <style>
 
   .details {
-    color: #e9e5e5;
+    color: rgb(0, 27, 59);
   }
 
 </style>

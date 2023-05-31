@@ -90,7 +90,7 @@ const addToSession = async () => {
   #request-btn {
     font-size: 1.2rem;
     width: 60px;
-    background-color: rgb(123, 197, 185);
+    background-color: rgb(0, 27, 59);
     border: none;
     transition: font-size 500ms ease, background-color 500ms ease;
     
