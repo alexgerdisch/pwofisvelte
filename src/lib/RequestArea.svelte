@@ -13,7 +13,6 @@ let activeSession = new Session("custom");
 
 
 const renderResponse = async () => {
-  
   currentResponse = await requestPwofiApi(activeSession);
   activeSession.convo = [...activeSession.convo, {role: "assistant", content: currentResponse}]
   const assistantResElement = document.createElement('p');
@@ -29,11 +28,12 @@ const addToSession = async () => {
   const userReqElement = document.createElement('p');
   userReqElement.textContent = userInput.value;
   userReqElement.classList.add("user-entry", "convo-item");
-  chatContainer.appendChild(userReqElement)
+  chatContainer.appendChild(userReqElement);
   userInput.value = '';
   renderResponse();
-
 }
+
+
 
 </script>
 
