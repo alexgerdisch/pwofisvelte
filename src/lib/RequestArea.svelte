@@ -37,19 +37,23 @@ const addToSession = async () => {
 
 </script>
 
+<div class="wrapper">
+  <AssistBar/>
+  <section id="request-area" >
 
-<section id="request-area" >
-<AssistBar/>
-<div bind:this={chatContainer}>
-<!-- Chat contents get appended here -->
-<!-- Both user requests and assistant responses -->
+  <div bind:this={chatContainer}>
+  <!-- Chat contents get appended here -->
+  <!-- Both user requests and assistant responses -->
+  </div>
+
+  </section>
+  <form id="input-wrapper">
+    <input type="text" id="user-request" placeholder="Send a request..." bind:this={userInput} />
+    <button id="request-btn" on:click|preventDefault={addToSession}>🚀</button>
+  </form>
+
 </div>
 
-</section>
-<form id="input-wrapper">
-  <input type="text" id="user-request" placeholder="Send a request..." bind:this={userInput} />
-  <button id="request-btn" on:click|preventDefault={addToSession}>🚀</button>
-</form>
 
 
 
