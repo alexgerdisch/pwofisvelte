@@ -15,7 +15,7 @@ let activeSession = new Session("custom");
 const renderResponse = async () => {
   currentResponse = await requestPwofiApi(activeSession);
   activeSession.convo = [...activeSession.convo, {role: "assistant", content: currentResponse}]
-  const assistantResElement = document.createElement('p');
+  const assistantResElement = document.createElement('pre');
   assistantResElement.textContent = currentResponse;
   assistantResElement.classList.add("assistant-response", "convo-item");
   chatContainer.appendChild(assistantResElement);
@@ -114,12 +114,19 @@ const addToSession = async () => {
   }
 
   :global(.assistant-response) {
-    color: rgb(235, 245, 239);
+    background-color: rgb(0, 27, 59);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    white-space: pre-wrap;
   
   }
 
   :global(.user-entry) {
-    color: rgb(191, 202, 196);
+    color: #0f2327;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
   }
 
 </style>

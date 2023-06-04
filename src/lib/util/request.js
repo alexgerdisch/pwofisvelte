@@ -3,7 +3,7 @@
 
 // import { assistCurrent, endpointSetter } from "./assist"
 
-let endpointURL = "http://127.0.0.1:5001/pwofibeta/us-central1/api/"
+let endpointURL = "https://us-central1-pwofibeta.cloudfunctions.net/api/"
 
 // let callableEndpoint = endpointSetter()
 
