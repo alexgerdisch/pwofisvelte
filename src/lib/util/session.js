@@ -14,6 +14,10 @@ export class Session {
     // method that saves session details to user's Firestore
 
     saveToFirestore() {
+        // takes this.convo and sends it to appropriate user id's firebase
+        // 
+        // each session creates a new session object 
+        // objects contain session type, id, and convo contents. 
         
     }
 
