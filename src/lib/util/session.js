@@ -1,4 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
+import { auth } from '$lib/util/app.js'
+
 // import { writable } from "svelte/store";
 
 // export const activeSession = writable({});
@@ -8,6 +10,7 @@ export class Session {
         this.seshType = type;
         this.seshId = uuidv4();
         this.convo = [];
+        this.assist = {};
     }
 
 
@@ -17,8 +20,10 @@ export class Session {
         // takes this.convo and sends it to appropriate user id's firebase
         // 
         // each session creates a new session object 
-        // objects contain session type, id, and convo contents. 
+        // objects contain session type, id, and convo contents.
         
+
+
     }
 
 }
