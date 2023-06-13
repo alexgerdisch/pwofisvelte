@@ -1,20 +1,28 @@
 <script>
-export let assistName = "Custom⚙️";
-export let active = false;
 
-if (active === true) {
-    console.log(`Active Assist: ${assistName}`);
-}
+    import { assistCurrent } from "$lib/util/assist.js";
+
+    export let assistName = "Custom⚙️";
+    export let assistType = "custom";
+    export let active = false;
+
+    if (active === true) {
+        console.log(`Active Assist: ${assistName}`);
+    }
 
 
-const processAssist = assist => {
-    // process assist here.
-}
+    const processAssist = type => {
+        // process assist here.
+
+        console.log(`ACTIVATING ASSIST TYPE: ${type}`)
+
+        
+    }
 
 </script>
 
 <!-- A11y forced the on:keyup, it does nothing currently. -->
-<div id="box-layer" on:click={processAssist} on:keyup>
+<div id="box-layer" on:click={() => processAssist(assistType)} on:keyup>
     <p id="text-layer">{assistName}</p>
     <div id="color-layer"></div>
     <div id="outline-layer"></div>

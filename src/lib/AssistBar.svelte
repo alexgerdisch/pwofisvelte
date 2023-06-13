@@ -4,9 +4,10 @@
 
 <section id="assistBar">
     <AssistButton/>
-    <AssistButton assistName="Follow-up📨"/>
-    <AssistButton assistName="Cold Message☃️"/>
-    <AssistButton assistName="Warm Referral🌶️"/>
+    <AssistButton assistName="Follow-up📨" assistType="followup"/>
+    <AssistButton assistName="Cold Message☃️" assistType="cold"/>
+    <AssistButton assistName="Warm Referral🌶️" assistType="referral"/>
+    <AssistButton assistName="Template Recycler♻️" assistType="template"/>
 
 
 </section>

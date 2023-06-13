@@ -22,7 +22,7 @@ export class Session {
         // each session creates a new session object 
         // objects contain session type, id, and convo contents.
         
-
+        
 
     }
 

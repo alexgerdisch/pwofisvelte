@@ -9,17 +9,13 @@ let chatContainer;
 let currentResponse;
 let userInput;
 
-let activeSession = new Session("custom");
+let activeSession;
 
-
-const renderResponse = async () => {
-  currentResponse = await requestPwofiApi(activeSession);
-  activeSession.convo = [...activeSession.convo, {role: "assistant", content: currentResponse}]
-  const assistantResElement = document.createElement('pre');
-  assistantResElement.textContent = currentResponse;
-  assistantResElement.classList.add("assistant-response", "convo-item");
-  chatContainer.appendChild(assistantResElement);
-}
+// //pass a valid string to assistActivator to determine assist type
+// // || "followup" || :""
+// const assistActivator = (assistType) => {
+//   activeSession = new Session(assistType)
+// }
 
 
 
@@ -31,6 +27,15 @@ const addToSession = async () => {
   chatContainer.appendChild(userReqElement);
   userInput.value = '';
   renderResponse();
+}
+
+const renderResponse = async () => {
+  currentResponse = await requestPwofiApi(activeSession);
+  activeSession.convo = [...activeSession.convo, {role: "assistant", content: currentResponse}];
+  const assistantResElement = document.createElement('pre');
+  assistantResElement.textContent = currentResponse;
+  assistantResElement.classList.add("assistant-response", "convo-item");
+  chatContainer.appendChild(assistantResElement);
 }
 
 
