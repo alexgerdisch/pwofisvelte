@@ -13,7 +13,6 @@
   import SettingsModal from "$lib/SettingsModal.svelte";
   import AuthChecker from "$lib/AuthChecker.svelte";
   import Progress from "$lib/Progress.svelte";
-  import SessionChecker from "$lib/SessionChecker.svelte";
   
 
   onMount(async () => {
@@ -39,7 +38,6 @@
   {#if $currentUser}
     <div class="action-bar">
       <!-- <AuthChecker /> -->
-      <SessionChecker />
       <button on:click={toggleVisible} class="button">Settings 🔧</button>
       <LogoutButton />
     </div>
